@@ -6,6 +6,7 @@ import Header from './Header';
 import Content from './Content';
 import { onMessage } from './service/mockServer';
 import { store } from './state/store';
+import { ToastMessagesContainer } from './components/ToastMessagesContainer';
 
 function App() {
   onMessage(console.log);
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Container>
           <Content />
+          <ToastMessagesContainer />
         </Container>
       </div>
     </Provider>
