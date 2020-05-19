@@ -33,7 +33,7 @@ export const ToastMessage = ({ index, item }) => {
     >
       <SnackbarContent
         message={
-          <SubmissionData {...item.data} />
+          <SubmissionData itemData={item.data} />
         }
         action={<ToastMessageButtons item={item} />}
       />

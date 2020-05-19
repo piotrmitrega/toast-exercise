@@ -2,13 +2,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
+import { LikedSubmissionsContainer } from './components/LikedSubmissionsContainer';
+
 const useStyles = makeStyles(() => ({
   root: {
-    marginTop: '24px',
+    marginTop: '24px'
   },
   p: {
-    fontStyle: 'italic',
-  },
+    fontStyle: 'italic'
+  }
 }));
 
 export default function Content() {
@@ -18,7 +20,7 @@ export default function Content() {
       <Typography variant="h4">Liked Form Submissions</Typography>
 
       <Typography variant="body1" className={classes.p}>
-        TODO: List of liked submissions here (delete this line)
+        <LikedSubmissionsContainer />
       </Typography>
     </div>
   );
