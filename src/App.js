@@ -9,8 +9,6 @@ import { store } from './state/store';
 import { ToastMessagesContainer } from './components/ToastMessagesContainer';
 
 function App() {
-  onMessage(console.log);
-
   return (
     <Provider store={store}>
       <div>

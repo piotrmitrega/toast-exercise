@@ -28,8 +28,6 @@ export const ToastMessage = ({ index, item }) => {
         vertical: 'bottom',
         horizontal: 'right'
       }}
-      onClose={console.log}
-
     >
       <SnackbarContent
         message={
