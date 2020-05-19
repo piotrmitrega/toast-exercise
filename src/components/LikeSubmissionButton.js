@@ -8,7 +8,7 @@ import { likeItem } from '../state/actions';
 import { submissionPropTypes } from './submissionPropTypes';
 
 const useStyles = makeStyles(() => ({
-  wrapper: {
+  likeButton: {
     'text-transform': 'uppercase',
     color: 'red'
   }
@@ -21,7 +21,7 @@ export const LikeSubmissionButton = ({ item }) => {
   return (
     <Button
       onClick={() => dispatch(likeItem(item))}
-      className={styles.wrapper}
+      className={styles.likeButton}
     >
       Like
     </Button>

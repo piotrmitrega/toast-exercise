@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { submissionDataPropTypes } from './submissionPropTypes';
 
 const useStyles = makeStyles(() => ({
-  wrapper: {
+  submissionData: {
     display: 'flex',
     'flex-direction': 'column'
   }
@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
 
 export const SubmissionData = ({ className, itemData }) => {
   const styles = useStyles();
-  const finalClassName = classNames(className, styles.wrapper);
+  const finalClassName = classNames(className, styles.submissionData);
 
   const { firstName, lastName, email } = itemData;
 

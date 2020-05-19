@@ -12,7 +12,7 @@ const height = 68;
 const spacing = 12;
 
 const useStyles = makeStyles(() => ({
-  wrapper: {
+  toastMessage: {
     marginBottom: props => props.index * (height + spacing)
   }
 }));
@@ -23,7 +23,7 @@ export const ToastMessage = ({ index, item }) => {
   return (
     <Snackbar
       open={true}
-      className={styles.wrapper}
+      className={styles.toastMessage}
       anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'right'

@@ -9,7 +9,7 @@ import { submissionPropTypes } from './submissionPropTypes';
 import { dismissItem } from '../state/actions';
 
 const useStyles = makeStyles(() => ({
-  wrapper: {
+  dismissButton: {
     color: 'white'
   }
 }));
@@ -21,7 +21,7 @@ export const DismissSubmissionButton = ({ item }) => {
   return (
     <Button
       onClick={() => dispatch(dismissItem(item))}
-      className={styles.wrapper}
+      className={styles.dismissButton}
     >
       <CloseIcon />
     </Button>
