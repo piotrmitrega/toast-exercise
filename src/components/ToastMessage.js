@@ -35,7 +35,7 @@ export const ToastMessage = ({ index, item }) => {
         message={
           <SubmissionData {...item.data} />
         }
-        action={<ToastMessageButtons />}
+        action={<ToastMessageButtons item={item} />}
       />
     </Snackbar>
   );
@@ -43,5 +43,5 @@ export const ToastMessage = ({ index, item }) => {
 
 ToastMessage.propTypes = {
   index: PropTypes.number.isRequired,
-  item: submissionPropTypes
+  item: PropTypes.shape(submissionPropTypes)
 };

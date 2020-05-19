@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { LikeSubmissionButton } from './LikeSubmissionButton';
 import { DismissSubmissionButton } from './DismissSubmissionButton';
+import { submissionPropTypes } from './submissionPropTypes';
 
 const useStyles = makeStyles(() => ({
   wrapper: {
@@ -11,13 +13,17 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const ToastMessageButtons = () => {
+export const ToastMessageButtons = ({ item }) => {
   const styles = useStyles();
 
   return (
     <div className={styles.wrapper}>
-      <LikeSubmissionButton />
-      <DismissSubmissionButton />
+      <LikeSubmissionButton item={item} />
+      <DismissSubmissionButton item={item} />
     </div>
   );
+};
+
+ToastMessageButtons.propTypes = {
+  item: PropTypes.shape(submissionPropTypes).isRequired
 };

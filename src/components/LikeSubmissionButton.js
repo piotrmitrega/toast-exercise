@@ -1,6 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+
+import { likeItem } from '../state/actions';
+import { submissionPropTypes } from './submissionPropTypes';
 
 const useStyles = makeStyles(() => ({
   wrapper: {
@@ -9,15 +14,20 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const LikeSubmissionButton = () => {
+export const LikeSubmissionButton = ({ item }) => {
   const styles = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Button
-      onClick={console.log}
+      onClick={() => dispatch(likeItem(item))}
       className={styles.wrapper}
     >
       Like
     </Button>
   );
+};
+
+LikeSubmissionButton.propTypes = {
+  item: PropTypes.shape(submissionPropTypes).isRequired
 };
