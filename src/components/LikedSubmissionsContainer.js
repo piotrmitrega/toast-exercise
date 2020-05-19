@@ -5,7 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { SubmissionData } from './SubmissionData';
 
+const itemHeight = 54;
+
 const useStyles = makeStyles(() => ({
+  scrollView: {
+    maxHeight: 10 * itemHeight,
+    overflowY: 'auto'
+  },
   likedItem: {
     border: '1px solid green',
     borderRadius: 4,
@@ -21,7 +27,7 @@ export const LikedSubmissionsContainer = () => {
     return <span>No liked items. Yet...</span>;
   }
   return (
-    <div>
+    <div className={styles.scrollView}>
       {likedItems.map(item => (
         <SubmissionData
           className={styles.likedItem}
