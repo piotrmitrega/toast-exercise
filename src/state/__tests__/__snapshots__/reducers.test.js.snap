@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`submissions reducers tests suite submissions/receive-incoming-item append incoming item to the list 1`] = `
+Object {
+  "incomingItems": Array [
+    Object {
+      "data": Object {},
+      "id": 0,
+    },
+    Object {
+      "data": Object {
+        "foo": "bar",
+      },
+      "id": 1,
+    },
+  ],
+}
+`;
