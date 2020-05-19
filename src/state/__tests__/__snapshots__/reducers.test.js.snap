@@ -1,18 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`submissions reducers tests suite submissions/dismiss-item remove item from incomingItems 1`] = `
+Object {
+  "incomingItems": Array [],
+  "likedItems": Array [],
+}
+`;
+
+exports[`submissions reducers tests suite submissions/dismiss-item remove item from likedItems 1`] = `
+Object {
+  "incomingItems": Array [
+    Object {
+      "data": Object {
+        "name": "anotherDummy",
+      },
+      "id": "2",
+    },
+  ],
+  "likedItems": Array [],
+}
+`;
+
+exports[`submissions reducers tests suite submissions/like-item add item to likedItems 1`] = `
+Object {
+  "incomingItems": Array [],
+  "likedItems": Array [
+    Object {
+      "data": Object {
+        "name": "dummy",
+      },
+      "id": "1",
+    },
+  ],
+}
+`;
+
+exports[`submissions reducers tests suite submissions/like-item remove item from from incomingItems 1`] = `
+Object {
+  "incomingItems": Array [],
+  "likedItems": Array [
+    Object {
+      "data": Object {
+        "name": "dummy",
+      },
+      "id": "1",
+    },
+  ],
+}
+`;
+
 exports[`submissions reducers tests suite submissions/receive-incoming-item append incoming item to the list 1`] = `
 Object {
   "incomingItems": Array [
     Object {
-      "data": Object {},
-      "id": 0,
+      "data": Object {
+        "name": "anotherDummy",
+      },
+      "id": "2",
     },
     Object {
       "data": Object {
-        "foo": "bar",
+        "name": "dummy",
       },
-      "id": 1,
+      "id": "1",
     },
   ],
+  "likedItems": Array [],
 }
 `;

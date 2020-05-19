@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 
-import { RECEIVE_INCOMING_ITEM } from './actions';
+import { DISMISS_ITEM, LIKE_ITEM, RECEIVE_INCOMING_ITEM } from './actions';
 
 export const INITIAL_STATE = {
-  incomingItems: []
+  incomingItems: [],
+  likedItems: []
 };
 
 export const submissions = (state = INITIAL_STATE, action) => {
@@ -14,6 +15,36 @@ export const submissions = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       incomingItems: [...incomingItems, item]
+    };
+  }
+
+  if (action.type === LIKE_ITEM) {
+    const { item } = action;
+    const { incomingItems } = state;
+    const { likedItems } = state;
+
+    const newIncomingItems = incomingItems.filter(i => i.id !== item.id);
+    const newLikedItems = [...likedItems, item];
+
+    return {
+      ...state,
+      incomingItems: newIncomingItems,
+      likedItems: newLikedItems
+    };
+  }
+
+  if (action.type === DISMISS_ITEM) {
+    const { item } = action;
+    const { incomingItems } = state;
+    const { likedItems } = state;
+
+    const newIncomingItems = incomingItems.filter(i => i.id !== item.id);
+    const newLikedItems = likedItems.filter(i => i.id !== item.id);
+
+    return {
+      ...state,
+      incomingItems: newIncomingItems,
+      likedItems: newLikedItems
     };
   }
 
