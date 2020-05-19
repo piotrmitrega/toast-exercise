@@ -1,12 +1,22 @@
-import { onMessage } from '../service/mockServer';
-import { receiveIncomingItem } from './actions';
+import { fetchLikedFormSubmissions } from '../service/mockServer';
+import { FETCH_LIKED_ITEMS, fetchLikedItems, fetchLikedItemsSuccess } from './actions';
 
-export const middleware = ({ dispatch, getState }) => next => {
-  onMessage((item) => {
-    dispatch(receiveIncomingItem(item));
-  });
+const refetchWithInterval = (dispatch) => {
+  setTimeout(() => dispatch(fetchLikedItems()), 1000);
+};
 
-  return (action) => {
-    return next(action);
-  };
+export const middleware = ({ dispatch, getState }) => next => (action) => {
+  if (action.type === FETCH_LIKED_ITEMS) {
+    fetchLikedFormSubmissions()
+      .then(({ formSubmissions }) => {
+        dispatch(fetchLikedItemsSuccess(formSubmissions));
+        refetchWithInterval(dispatch);
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch(fetchLikedItems());
+      });
+  }
+
+  return next(action);
 };

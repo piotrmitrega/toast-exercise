@@ -21,6 +21,46 @@ Object {
 }
 `;
 
+exports[`submissions reducers tests suite submissions/fetch-liked-items-success should not omit locally liked items that are not included in server response 1`] = `
+Object {
+  "incomingItems": Array [],
+  "likedItems": Array [
+    Object {
+      "data": Object {
+        "name": "dummy",
+      },
+      "id": "1",
+    },
+    Object {
+      "data": Object {
+        "name": "anotherDummy",
+      },
+      "id": "2",
+    },
+  ],
+}
+`;
+
+exports[`submissions reducers tests suite submissions/fetch-liked-items-success should set fetched liked items 1`] = `
+Object {
+  "incomingItems": Array [],
+  "likedItems": Array [
+    Object {
+      "data": Object {
+        "name": "dummy",
+      },
+      "id": "1",
+    },
+    Object {
+      "data": Object {
+        "name": "anotherDummy",
+      },
+      "id": "2",
+    },
+  ],
+}
+`;
+
 exports[`submissions reducers tests suite submissions/like-item add item to likedItems 1`] = `
 Object {
   "incomingItems": Array [],
