@@ -1,9 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import Snackbar from '@material-ui/core/Snackbar';
 
-const height = 48;
+import { submissionPropTypes } from './submissionPropTypes';
+import { SubmissionData } from './SubmissionData';
+
+const height = 68;
 const spacing = 12;
 
 const useStyles = makeStyles(() => ({
@@ -19,14 +23,24 @@ export const ToastMessage = ({ index, item }) => {
     <Snackbar
       open={true}
       className={styles.wrapper}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'right'
+      }}
       onClose={console.log}
+
     >
       <SnackbarContent
         message={
-          'I love candy. I love cookies. I love cupcakes. \
-          I love cheesecake. I love chocolate.'
+          <SubmissionData {...item.data} />
         }
+        action={<div>heh</div>}
       />
     </Snackbar>
   );
+};
+
+ToastMessage.propTypes = {
+  index: PropTypes.number.isRequired,
+  item: submissionPropTypes
 };
