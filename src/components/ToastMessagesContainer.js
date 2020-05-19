@@ -12,6 +12,7 @@ export const ToastMessagesContainer = () => {
         <ToastMessage
           index={index}
           item={item}
+          key={item.id}
         />
       ))
       }
