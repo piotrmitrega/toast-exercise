@@ -6,6 +6,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 import { submissionPropTypes } from './submissionPropTypes';
 import { SubmissionData } from './SubmissionData';
+import { ToastMessageButtons } from './ToastMessageButtons';
 
 const height = 68;
 const spacing = 12;
@@ -34,7 +35,7 @@ export const ToastMessage = ({ index, item }) => {
         message={
           <SubmissionData {...item.data} />
         }
-        action={<div>heh</div>}
+        action={<ToastMessageButtons />}
       />
     </Snackbar>
   );
